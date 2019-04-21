@@ -38,10 +38,8 @@ class ClienteController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreClienteRequest $request)
     {
-
-
         Cliente::create($request->all());
 
         Session::flash('message','Cliente creado corretamente');
@@ -77,16 +75,8 @@ class ClienteController extends Controller
      * @param  \App\Cliente  $cliente
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Cliente $cliente)
+    public function update(UpdateClienteRequest $request, Cliente $cliente)
     {
-        $request->validate([
-            'cedula' => 'required',
-            'nombre' => 'required',
-            'direccion' => 'required',
-            'telefono' => 'required',
-            'correo' => 'required',
-        ]);
-
         $cliente->update($request->all());
 
         Session::flash('message','Cliente actualizado corretamente');
