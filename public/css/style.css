@@ -1,0 +1,10 @@
+.logo-custon{
+    font-family: 'Lobster Two', cursive;
+    font-size: 24px;
+}
+
+.botoninput{
+    padding: 4px 6px 5px;
+    border-width: 2px;
+    border-style: outset;
+}
